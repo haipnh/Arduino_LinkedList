@@ -84,4 +84,20 @@ node* findNode(linkedList list, int toFind){
   }
 
 //Find node with large value in linked list
-node* findMax(linkedList &);
+node* findMax(linkedList &list){
+  node* sample = list.head;
+  node* nodeMax = list.head;
+  if(sample==NULL){
+    return sample;
+  }
+  else{
+      while(sample->next!=NULL){
+        if(sample->data>nodeMax->data){
+          nodeMax=sample;
+          sample=sample->next;
+         }
+      }
+  }
+  return nodeMax;
+}
+
